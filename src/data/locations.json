@@ -1,0 +1,22 @@
+{
+  "poi": [
+    {
+      "id": "sao-lourenco",
+      "name": "Ponta de São Lourenço",
+      "title": "Point of Saint Lawrence",
+      "location": { "lat": 32.7431658, "lng": -16.7010976 },
+    },
+    {
+      "id": "faja-dos-padres",
+      "name": "Fajã dos Padres",
+      "title":"Fajã dos Padres Cable Car",
+      "location": { "lat": 32.6569985, "lng": -17.0237307 },
+    },
+    {
+      "id": "porto-moniz",
+      "name": "Piscinas Naturais de Porto Moniz",
+      "title": "Porto Moniz Natural Swimming Pools",
+      "location": { "lat": 32.8623118, "lng": -17.1706851 },
+    }
+  ]
+}
