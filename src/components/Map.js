@@ -4,7 +4,7 @@ import LocationMarker from "../components/LocationMarker.js";
 
 const Map = withScriptjs(withGoogleMap((props) => {
 
-  const markers = props.locations.default.map((location, index) =>
+  const markers = props.locations.map((location, index) =>
     <LocationMarker
       key={location.id}
       index={index}
