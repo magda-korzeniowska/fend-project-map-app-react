@@ -17,11 +17,16 @@ class App extends Component {
   }
 
   updateLocations = () => {
+
+    // Push locations from local json file to an array
     let locations = [];
     locations.push(...places.default);
+
     locations.map(location => {
-      let photoUrl = [];
-      let getPhotos = (query) => {
+
+      //Get photos from Flickr
+      let pictures = [];
+      let getPictures = (query) => {
         const FLICKR_KEY = 'c009bc8d2af43bc3f121ddf3fae2f396';
         let num = 6;
         let pics = [];
@@ -34,30 +39,58 @@ class App extends Component {
             })
             pics.push(...picArray);
           })
-         photoUrl.push(pics);
+          .catch(error => {
+            alert(`An error occurred while trying to fetch data from Flickr: ${error}`);
+          })
+         // Push all pictures of all locations to an array
+         pictures.push(pics);
       }
 
-      getPhotos(location.name);
-      location['photos'] = photoUrl[0]
+      // Get information from Wikipedia
+      let wikiData = [];
+      let getWikiData = (query) => {
+        fetch(`https://en.wikipedia.org/w/api.php?origin=*&action=query&format=json&prop=extracts&titles=${query.replace(/ /g, '_')}&exintro=1`)
+          .then(res => {
+            return res.json()})
+          .then(places => {
+            let content = places.query.pages[Object.keys(places.query.pages)[0]].extract;
+            wikiData.push(content);
+          })
+          .catch(error => {
+            alert(`An error occurred while trying to fetch data about ${query}: ${error}`);
+          })
+      }
+
+      // Make a request for each location by location name
+      getPictures(location.name);    // fetch images form Flicker
+      getWikiData(location.name);  // fetch data form Wikipedia
+
+      // array in array - push all pictures to 'location' array - 'photos' variable
+      location['photos'] = pictures[0];
+      location['wikiData'] = wikiData;
+
       return locations;
     });
 
+    // Set the state of locations - updated by photos from Flick and data from Wikipedia
     this.setState({ locations: locations });
+    console.log(locations)
   }
 
-  onMarkerClick = (location) => {
-    this.setState({
-      showInfoWindow: true,
-      activeMarker: location
-    })
-  }
 
-  onMapClick = () => {
-    this.setState({
-      showInfoWindow: false,
-      activeMarker: {}
-    })
-  }
+  // onMarkerClick = (location) => {
+  //   this.setState({
+  //     showInfoWindow: true,
+  //     activeMarker: location
+  //   })
+  // }
+  //
+  // onMapClick = () => {
+  //   this.setState({
+  //     showInfoWindow: false,
+  //     activeMarker: {}
+  //   })
+  // }
 
   render() {
     return (
@@ -75,8 +108,8 @@ class App extends Component {
             locations={this.state.locations}
             // showInfoWindow={this.state.showInfoWindow}
             // activeMarker={this.state.activeMarker}
-            onMarkerClick={this.onMarkerClick}
-            onMapClick={this.onMapClick}
+            // onMarkerClick={this.onMarkerClick}
+            // onMapClick={this.onMapClick}
           />
         </main>
         {/* <footer className="footer">
