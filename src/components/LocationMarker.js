@@ -3,28 +3,16 @@ import { InfoWindow, Marker } from "react-google-maps";
 
 class LocationMarker extends Component {
 
- state = {
-   // isOpen: false,
-   activeMarker: {}
- }
-
-  onToggleOpen = (marker) => {
-    this.setState({
-      // isOpen: true,
-      activeMarker: marker
-    })
-  }
-
   render() {
     return(
       <Marker
-        key={this.props.id}
+        onClick={(event => this.props.handleMarkerClick(event, this.props.position, this.props.id))}
         position={this.props.position}
-        onClick={() => this.onToggleOpen(this.props.index)}
+        animation={this.props.activeMarker === this.props.id ? window.google.maps.Animation.BOUNCE : null}
       >
-        {(this.state.activeMarker === this.props.index) &&
+        {this.props.activeMarker === this.props.id &&
           <InfoWindow
-            onCloseClick={() => this.onToggleOpen()}
+            onCloseClick={this.props.handleMarkerClick}
           >
             <h3>{this.props.name}</h3>
           </InfoWindow>

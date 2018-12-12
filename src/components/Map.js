@@ -14,6 +14,8 @@ const Map = withScriptjs(withGoogleMap((props) => {
         lat: location.latlng.lat,
         lng: location.latlng.lng
       }}
+      handleMarkerClick={props.handleMarkerClick}
+      activeMarker={props.activeMarker}
     />
   );
 

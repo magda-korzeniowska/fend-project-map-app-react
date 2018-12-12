@@ -8,8 +8,7 @@ class App extends Component {
 
   state = {
     locations: [],
-    // showInfoWindow: false,
-    // activeMarker: {}
+    activeMarker: {}
   }
 
   componentDidMount = () => {
@@ -85,20 +84,11 @@ class App extends Component {
     console.log(locations)
   }
 
-
-  // onMarkerClick = (location) => {
-  //   this.setState({
-  //     showInfoWindow: true,
-  //     activeMarker: location
-  //   })
-  // }
-  //
-  // onMapClick = () => {
-  //   this.setState({
-  //     showInfoWindow: false,
-  //     activeMarker: {}
-  //   })
-  // }
+  handleMarkerClick = (event, position, marker) => {
+    this.setState({
+      activeMarker: marker
+    })
+  }
 
   render() {
     return (
@@ -114,10 +104,8 @@ class App extends Component {
         <main className="main_container">
           <MapContainer
             locations={this.state.locations}
-            // showInfoWindow={this.state.showInfoWindow}
-            // activeMarker={this.state.activeMarker}
-            // onMarkerClick={this.onMarkerClick}
-            // onMapClick={this.onMapClick}
+            handleMarkerClick={this.handleMarkerClick}
+            activeMarker={this.state.activeMarker}
           />
         </main>
         {/* <footer className="footer">
