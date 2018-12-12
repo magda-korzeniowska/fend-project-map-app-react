@@ -13,11 +13,19 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.updateLocations()
+    this.updateLocations();
+
+    // Handle errors with Google map authorization
+    window.gm_authFailure = () => {
+      alert('Sorry, there was problem while loading map. Please check your API key.')
+    }
+
+    window.onError = () => {
+      alert('Sorry, there was problem while loading a map. Please try again later')
+    }
   }
 
   updateLocations = () => {
-
     // Push locations from local json file to an array
     let locations = [];
     locations.push(...places.default);
@@ -40,7 +48,7 @@ class App extends Component {
             pics.push(...picArray);
           })
           .catch(error => {
-            alert(`An error occurred while trying to fetch data from Flickr: ${error}`);
+            window.alert(`An error occurred while trying to fetch data from Flickr: ${error}`);
           })
          // Push all pictures of all locations to an array
          pictures.push(pics);
@@ -57,7 +65,7 @@ class App extends Component {
             wikiData.push(content);
           })
           .catch(error => {
-            alert(`An error occurred while trying to fetch data about ${query}: ${error}`);
+            window.alert(`An error occurred while trying to fetch data about ${query}: ${error}`);
           })
       }
 
