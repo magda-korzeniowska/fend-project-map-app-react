@@ -8,7 +8,8 @@ class App extends Component {
 
   state = {
     locations: [],
-    activeMarker: {}
+    activeMarker: {},
+    modal: false
   }
 
   componentDidMount = () => {
@@ -90,6 +91,17 @@ class App extends Component {
     })
   }
 
+  openModal = () => {
+    this.setState({ modal: true })
+  }
+
+  closeModal = () => {
+    this.setState({
+      modal: false,
+      activeMarker: {}
+     })
+  }
+
   render() {
     return (
       <div className="App">
@@ -106,6 +118,9 @@ class App extends Component {
             locations={this.state.locations}
             handleMarkerClick={this.handleMarkerClick}
             activeMarker={this.state.activeMarker}
+            modal={this.state.modal}
+            openModal={this.openModal}
+            closeModal={this.closeModal}
           />
         </main>
         {/* <footer className="footer">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
-import LocationMarker from "../components/LocationMarker.js";
+import LocationMarker from "./LocationMarker.js";
 
 const Map = withScriptjs(withGoogleMap((props) => {
 
@@ -10,12 +10,15 @@ const Map = withScriptjs(withGoogleMap((props) => {
       index={index}
       id={location.id}
       name={location.name}
+      engName={location.title}
       position={{
         lat: location.latlng.lat,
         lng: location.latlng.lng
       }}
       handleMarkerClick={props.handleMarkerClick}
       activeMarker={props.activeMarker}
+      openModal={props.openModal}
+      closeModal={props.closeModal}
     />
   );
 

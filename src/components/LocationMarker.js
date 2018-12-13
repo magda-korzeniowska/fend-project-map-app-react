@@ -1,10 +1,10 @@
-import React, { Component}  from 'react';
+import React, { Component }  from 'react';
 import { InfoWindow, Marker } from "react-google-maps";
 
 class LocationMarker extends Component {
 
   render() {
-    return(
+    return (
       <Marker
         onClick={(event => this.props.handleMarkerClick(event, this.props.position, this.props.id))}
         position={this.props.position}
@@ -14,7 +14,16 @@ class LocationMarker extends Component {
           <InfoWindow
             onCloseClick={this.props.handleMarkerClick}
           >
-            <h3>{this.props.name}</h3>
+            <div className="info_window">
+
+              <h2>{this.props.name}</h2>
+              <h3>{this.props.engName}</h3>
+
+              <button className="details_button"
+                onClick={(event) => {
+                  this.props.openModal();
+                }}>Details</button>
+            </div>
           </InfoWindow>
         }
       </Marker>
