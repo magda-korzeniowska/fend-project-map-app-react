@@ -23,12 +23,47 @@ header {
   margin: auto 1em auto 0;
   padding: 0;
   color: #0066cc;
-  font-family: Roboto Mono, sans-serif;
+  font-family: Rajdhani, sans-serif;
   font-size: 2em;
   font-weight: 700;
 }
 
+/*** INFO WINDOW ***/
+
+.info-window {
+  font-family: Rajdhani, sans-serif;
+  text-align: center;
+  padding-left: 28px;
+  width: 18em;
+  height: 10em;
+}
+
+.info-window h3 {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.info-window p {
+  font-size: 1.5em;
+}
+
+.info-window .details-button {
+  font-family: Rajdhani, sans-serif;
+  font-size: 1.25em;
+  text-align: center;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.details-button:hover,
+.details-button:focus {
+    color: black;
+    cursor: pointer;
+}
+
 /*** LOCATION DETAILS COMPONENT ***/
+
 .modal_open {
   display: block
 }

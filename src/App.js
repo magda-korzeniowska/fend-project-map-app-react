@@ -122,6 +122,7 @@ class App extends Component {
             openModal={this.openModal}
             closeModal={this.closeModal}
           />
+          {console.log(this.state.activeMarker)}
         </main>
         {/* <footer className="footer">
           <p>App created for UDACITY Nanodegree - Google Schoolarship Program. Copyright (c) 2018 </p>
