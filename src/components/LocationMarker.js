@@ -6,11 +6,11 @@ class LocationMarker extends Component {
   render() {
     return (
       <Marker
-        onClick={(event => this.props.handleMarkerClick(event, this.props.position, this.props.location.id))}
+        onClick={(event => this.props.handleMarkerClick(event, this.props.position, this.props.location))}
         position={this.props.position}
-        animation={this.props.activeMarker === this.props.location.id ? window.google.maps.Animation.BOUNCE : null}
+        animation={this.props.activeMarker === this.props.location ? window.google.maps.Animation.BOUNCE : null}
       >
-        {this.props.activeMarker === this.props.location.id &&
+        {this.props.activeMarker === this.props.location &&
           <InfoWindow
             onCloseClick={this.props.handleMarkerClick}
           >

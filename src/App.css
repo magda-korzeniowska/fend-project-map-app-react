@@ -1,6 +1,7 @@
 .App {
   margin: 30px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  font-family: Rajdhani, sans-serif;
 }
 
 /*** HEADER COMPONENT ***/
@@ -92,6 +93,49 @@ header {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
+    max-width: 750px;
+    flex-direction: column;
+    /* align-content: space-between; */
+}
+
+.location-name {
+  font-family: Rajdhani, sans-serif;
+  font-size: 1.25em;
+  color: #0066cc;
+}
+
+
+/* PHOTOGALLERY */
+
+.photogallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.photogallery li {
+  margin: 0 0 1em 0;
+  width: 170px;
+  height: 120px;
+  background-color: #e6e6e6;
+  box-sizing: border-box;
+}
+
+.photogallery .photo {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.flickr  {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flickr a {
+  color: #0066cc;
 }
 
 /* CLOSE button */

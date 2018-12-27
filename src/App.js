@@ -36,7 +36,7 @@ class App extends Component {
       let pictures = [];
       let getPictures = (query) => {
         const FLICKR_KEY = 'c009bc8d2af43bc3f121ddf3fae2f396';
-        let num = 6;
+        let num = 8;
         let pics = [];
         fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_KEY}&tags=${query}&per_page=${num}&page=1&format=json&nojsoncallback=1`)
           .then(res => res.json())
@@ -122,7 +122,6 @@ class App extends Component {
             openModal={this.openModal}
             closeModal={this.closeModal}
           />
-          {console.log(this.state.activeMarker)}
         </main>
         {/* <footer className="footer">
           <p>App created for UDACITY Nanodegree - Google Schoolarship Program. Copyright (c) 2018 </p>
