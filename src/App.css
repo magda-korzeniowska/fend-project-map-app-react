@@ -134,10 +134,44 @@ header {
   justify-content: space-between;
 }
 
+.flickr span {
+  font-weight: 700;
+  color: #0066cc
+}
+
 .flickr a {
   color: #0066cc;
 }
 
+/* WIKIPEDIA */
+
+.location-info {
+  border-top: 1px solid #737373;
+  border-bottom: 1px solid #737373;
+  background-color: #f1f1f1;
+  max-height: 250px;
+  text-align: justify;
+  overflow-y: auto;
+}
+
+.wikipedia  {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wikipedia .powered-by {
+  font-weight: 700;
+  color: #0066cc
+}
+
+.wikipedia a {
+  color: #0066cc;
+}
+
+.no-wiki-data span {
+  font-weight: 700;
+  color: #0066cc
+}
 /* CLOSE button */
 
 .close {

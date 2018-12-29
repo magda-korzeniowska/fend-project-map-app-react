@@ -62,7 +62,9 @@ class App extends Component {
             return res.json()})
           .then(places => {
             let content = places.query.pages[Object.keys(places.query.pages)[0]].extract;
-            wikiData.push(content);
+            if (content) {
+              wikiData.push(content);
+            }
           })
           .catch(error => {
             window.alert(`An error occurred while trying to fetch data about ${query}: ${error}`);
@@ -76,7 +78,7 @@ class App extends Component {
       // array in array - push all pictures to 'location' array - 'photos' variable
       location['photos'] = pictures[0];
       location['wikiData'] = wikiData;
-
+    
       return locations;
     });
 

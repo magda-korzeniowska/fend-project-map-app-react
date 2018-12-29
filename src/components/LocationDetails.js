@@ -7,9 +7,11 @@ class LocationDetails extends Component {
       <div className={`modal ${this.props.modal ? "modal_open" : "modal_closed"}`}>
         {this.props.activeMarker ? (
           <div className="modal-content">
+
             <span className="close"
               onClick={(event) => this.props.closeModal()}
               >&times;</span>
+
             <h2 className="location-name">{`${this.props.activeMarker.name} (${this.props.activeMarker.title})`}</h2>
 
             <div className="pictures">
@@ -31,10 +33,54 @@ class LocationDetails extends Component {
               </div>
             </div>
 
+{/* TODO: check the length property of this.props.activeMarker.wikiData
+=== 0 -> show "no information available on Wikipedia"
+> 0 -> show information from Wikipedia
+At the moment: 'Cannot read property 'length' of undefined' error   */}
 
-             <h2 className="name">Hello</h2>
+            {this.props.activeMarker.wikiData ? (
+              <div className="location-info">
+
+                <div className="wiki-data"
+                  dangerouslySetInnerHTML={{ __html: this.props.activeMarker.wikiData }}>
+                </div>
+
+                <div className="wikipedia">
+                  <span className="powered-by">Powered by Wikipedia</span>
+                  <a href={`https://en.wikipedia.org/wiki/${this.props.activeMarker.name}`} target="_blank">More information...</a>
+                </div>
+
+              </div>
+
+            ) : (
+              <div className="location-info">
+
+                <div className="wikipedia">
+                  <span className="no-wiki-data">No information available on <span>Wikipedia</span></span>
+                  <a href={`https://en.wikipedia.org/wiki/${this.props.activeMarker.name}`} target="_blank">Details...</a>
+                </div>
+
+              </div>
+            )}
           </div>
-        ) : undefined}
+        ) : undefined }
+
+          {console.log(this.props.activeMarker.wikiData)}
+
+          {/* {this.props.activeMarker.wikiData !== null ? (
+            <div className="location-info">
+
+              <span>Info</span>
+
+            </div>
+          ) : (
+            <div className="location-info">
+              <span>No info</span>
+            </div>
+          )}
+        </div>
+      ) : undefined } */}
+
       </div>
     )
   }
