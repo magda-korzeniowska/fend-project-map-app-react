@@ -29,6 +29,59 @@ header {
   font-weight: 700;
 }
 
+.button {
+  margin: 0.4em 1em 0 auto;
+  cursor: pointer;
+  border-color: #fff;
+  background-color: #fff;
+}
+
+/*** SIDEBAR ***/
+
+.sidebar-wrapper {
+  display: flex;
+  /* height: calc(100vh - 160px); */
+  background-color: #fff;
+}
+
+.sidebar {
+  display: flex;
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  top: 102px;
+  background-color: #f1f1f1;
+  z-index: 10;
+  display: block;
+  transition: 0.3s;
+  font-size: inherit;
+}
+
+.search-location-wrapper {
+  padding: 20px;
+}
+
+.search-location {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  height: 40px;
+  font-size: 0.9em;
+}
+
+.search-location::placeholder {
+  font-style: italic;
+}
+
+.main-container {
+  flex: 1;
+  position: relative;
+}
+
+
+
 /*** INFO WINDOW ***/
 
 .info-window {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import escapeRegExp from 'escape-string-regexp';
 import Header from './components/Header.js';
 import MapContainer from './components/MapContainer.js';
+import Search from './components/Search.js';
 import * as places from './data/locations.json';
 import './App.css';
 
@@ -9,7 +11,9 @@ class App extends Component {
   state = {
     locations: [],
     activeMarker: {},
-    modal: false
+    modal: false,
+    sideBar: false,
+    query: ''
   }
 
   componentDidMount = () => {
@@ -22,6 +26,15 @@ class App extends Component {
 
     window.onError = () => {
       alert('Sorry, there was problem while loading a map. Please try again later')
+    }
+  }
+
+  getLocations = (query) => {
+    if (query) {
+      const match = new RegExp(escapeRegExp(this.state.query), 'i')
+      this.setState({ locations: places.default.filter((location) =>
+        match.test(location.name + location.title)
+      )})
     }
   }
 
@@ -78,7 +91,7 @@ class App extends Component {
       // array in array - push all pictures to 'location' array - 'photos' variable
       location['photos'] = pictures[0];
       location['wikiData'] = wikiData;
-    
+
       return locations;
     });
 
@@ -104,18 +117,37 @@ class App extends Component {
      })
   }
 
+  toggleSideBar = () => {
+    this.setState(
+      this.state.sideBar ? { sideBar: false } : { sideBar: true }
+    )
+  }
+
+  updateQuery = (query) => {
+    this.setState({
+      query: query
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
-        <nav id="drawer" className="nav">
-          <ul className="nav_list">
-            <li className="nav_item"><a href="#">Location1</a></li>
-            <li className="nav_item"><a href="#">Location2</a></li>
-            <li className="nav_item"><a href="#">Location3</a></li>
-          </ul>
-        </nav>
-        <main className="main_container">
+        <Header
+          toggleSideBar={this.toggleSideBar}
+        />
+        <div className="sidebar-wrapper">
+          {this.state.sideBar && (
+            <aside className="sidebar">
+                <Search
+                  query={this.state.query}
+                  updateQuery={this.updateQuery}
+                  >
+                </Search>
+            </aside>
+          )}
+        </div>
+
+        <main className="main-container">
           <MapContainer
             locations={this.state.locations}
             handleMarkerClick={this.handleMarkerClick}

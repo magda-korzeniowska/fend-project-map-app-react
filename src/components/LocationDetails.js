@@ -18,7 +18,7 @@ class LocationDetails extends Component {
               <ul className="photogallery">
                 {this.props.activeMarker.photos ? this.props.activeMarker.photos.map(photo => (
                   <li key={photo}>
-                    <a href={photo} target="_blank">
+                    <a href={photo} target="_blank" rel="noopener noreferrer">
                       <div className="photo"
                         style={{ backgroundImage: `url(${ photo})` }}>
                       </div>
@@ -29,7 +29,7 @@ class LocationDetails extends Component {
 
               <div className="flickr">
                 <span>Powered by Flickr</span>
-                <a href={`https://www.flickr.com/search/?text=${this.props.activeMarker.name}`} target="_blank">More photos...</a>
+                <a href={`https://www.flickr.com/search/?text=${this.props.activeMarker.name}`} target="_blank" rel="noopener noreferrer">More photos...</a>
               </div>
             </div>
 
@@ -47,7 +47,7 @@ At the moment: 'Cannot read property 'length' of undefined' error   */}
 
                 <div className="wikipedia">
                   <span className="powered-by">Powered by Wikipedia</span>
-                  <a href={`https://en.wikipedia.org/wiki/${this.props.activeMarker.name}`} target="_blank">More information...</a>
+                  <a href={`https://en.wikipedia.org/wiki/${this.props.activeMarker.name}`} target="_blank" rel="noopener noreferrer">More information...</a>
                 </div>
 
               </div>
@@ -57,7 +57,7 @@ At the moment: 'Cannot read property 'length' of undefined' error   */}
 
                 <div className="wikipedia">
                   <span className="no-wiki-data">No information available on <span>Wikipedia</span></span>
-                  <a href={`https://en.wikipedia.org/wiki/${this.props.activeMarker.name}`} target="_blank">Details...</a>
+                  <a href={`https://en.wikipedia.org/wiki/${this.props.activeMarker.name}`} target="_blank" rel="noopener noreferrer">Details...</a>
                 </div>
 
               </div>
