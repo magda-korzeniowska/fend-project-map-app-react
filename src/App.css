@@ -57,11 +57,11 @@ header {
   font-size: inherit;
 }
 
-.search-location-wrapper {
+.search-location-bar {
   padding: 20px;
 }
 
-.search-location {
+.search-location-input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;

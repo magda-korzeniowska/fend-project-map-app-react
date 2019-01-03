@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import escapeRegExp from 'escape-string-regexp';
+// import escapeRegExp from 'escape-string-regexp';
+import sortBy from 'sort-by'
 import Header from './components/Header.js';
 import MapContainer from './components/MapContainer.js';
 import Search from './components/Search.js';
@@ -12,8 +13,7 @@ class App extends Component {
     locations: [],
     activeMarker: {},
     modal: false,
-    sideBar: false,
-    query: ''
+    sideBar: false
   }
 
   componentDidMount = () => {
@@ -26,15 +26,6 @@ class App extends Component {
 
     window.onError = () => {
       alert('Sorry, there was problem while loading a map. Please try again later')
-    }
-  }
-
-  getLocations = (query) => {
-    if (query) {
-      const match = new RegExp(escapeRegExp(this.state.query), 'i')
-      this.setState({ locations: places.default.filter((location) =>
-        match.test(location.name + location.title)
-      )})
     }
   }
 
@@ -123,26 +114,22 @@ class App extends Component {
     )
   }
 
-  updateQuery = (query) => {
-    this.setState({
-      query: query
-    })
-  }
-
   render() {
     return (
       <div className="App">
         <Header
           toggleSideBar={this.toggleSideBar}
         />
+
         <div className="sidebar-wrapper">
+          {console.log(this.state.filteredLocations)}
           {this.state.sideBar && (
             <aside className="sidebar">
-                <Search
-                  query={this.state.query}
-                  updateQuery={this.updateQuery}
-                  >
-                </Search>
+              <Search
+                handleMarkerClick={this.handleMarkerClick}
+                locations={this.state.locations}
+                >
+              </Search>
             </aside>
           )}
         </div>
