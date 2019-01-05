@@ -29,6 +29,14 @@ class Search extends Component {
     }
   }
 
+  // przed ostatnim else (athens)
+    // if (showingPlaces.length === 1) {
+    //           this.toggleLocationsActive(
+    //             this.state.showingPlaces[0].location.lat,
+    //             this.state.showingPlaces[0].location.lng
+    //           );
+
+
   render() {
     return (
       <div className="search-location">
@@ -36,10 +44,12 @@ class Search extends Component {
           <input
             className="search-location-input"
             type="text"
-            placeholder="Search by location"
             value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
+          <label htmlFor="input" className="search-location-label">
+            Search by location
+          </label>
         </div>
 
         <div className="search-location-results">
