@@ -97,6 +97,12 @@ class App extends Component {
     })
   }
 
+  closeInfoWIndow = () => {
+    this.setState({
+      activeMarker: {}
+    })
+  }
+
   openModal = () => {
     this.setState({ modal: true })
   }
@@ -119,12 +125,13 @@ class App extends Component {
       <div className="App">
         <Header
           toggleSideBar={this.toggleSideBar}
+          sideBar={this.state.sideBar}
         />
 
-        <div className="sidebar-wrapper">
+        <div className={`sidebar-wrapper ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`}>
           {console.log(this.state.filteredLocations)}
           {this.state.sideBar && (
-            <aside className="sidebar">
+            <aside className="sidebar" >
               <Search
                 handleMarkerClick={this.handleMarkerClick}
                 locations={this.state.locations}
@@ -134,10 +141,11 @@ class App extends Component {
           )}
         </div>
 
-        <main className="main-container">
+        <main className={`main-container ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`}>
           <MapContainer
             locations={this.state.locations}
             handleMarkerClick={this.handleMarkerClick}
+            closeInfoWIndow={this.closeInfoWIndow}
             activeMarker={this.state.activeMarker}
             modal={this.state.modal}
             openModal={this.openModal}

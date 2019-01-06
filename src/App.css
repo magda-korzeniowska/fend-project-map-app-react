@@ -45,14 +45,14 @@ header {
 }
 
 .sidebar {
-  display: flex;
+  /* display: flex; */
   position: absolute;
   width: 300px;
   height: 100%;
   top: 102px;
   background-color: #f1f1f1;
-  z-index: 10;
-  display: block;
+  z-index: 1;
+  /* display: block; */
   transition: 0.3s;
   font-size: inherit;
 }
@@ -122,37 +122,38 @@ header {
   font-size: 0.8em;
 }
 
-/* .main-container {
-  flex: 1;
-  position: relative;
-} */
-
-
-
 /*** INFO WINDOW ***/
 
 .info-window {
+  display: flex;
+  flex-direction: column;
   font-family: Rajdhani, sans-serif;
   text-align: center;
-  padding-left: 28px;
+  padding-left: 25px;
   width: 18em;
   height: 10em;
 }
 
 .info-window h3 {
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  color: #0066cc;
+  margin-bottom: 0;
 }
 
 .info-window p {
-  font-size: 1.5em;
+  font-style: italic;
+  font-size: 1.2em;
+  margin-top: 5px;
 }
 
 .info-window .details-button {
   font-family: Rajdhani, sans-serif;
   font-size: 1.25em;
-  text-align: center;
-  color: black;
+  align-self: center;
+  background-color: #cce6ff;
+  /* color: black; */
+  width: 50%;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -177,7 +178,7 @@ header {
 
 .modal {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;

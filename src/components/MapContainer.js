@@ -9,6 +9,7 @@ class MapContainer extends Component {
 			<Map
 				locations={this.props.locations}
         handleMarkerClick={this.props.handleMarkerClick}
+				closeInfoWIndow={this.props.closeInfoWIndow}
         activeMarker={this.props.activeMarker}
         modal={this.props.modal}
         openModal={this.props.openModal}

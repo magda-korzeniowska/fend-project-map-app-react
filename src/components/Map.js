@@ -18,6 +18,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
         lng: location.latlng.lng
       }}
       handleMarkerClick={props.handleMarkerClick}
+      closeInfoWIndow={props.closeInfoWIndow}
       activeMarker={props.activeMarker}
       openModal={props.openModal}
       modal={props.modal}

@@ -58,8 +58,8 @@ class Search extends Component {
               <li
                 className="location-list-item"
                 key={location.id}
-                // onClick={(event) => this.props.handleMarkerClick(event, this.props.position, this.props.location)}
-                // onKeyPress={}
+                onClick={(event) => this.props.handleMarkerClick(event, location.latlng, location)}
+                onKeyPress={(event) => this.props.handleMarkerClick(event, location.latlng, location)}
                 >
                   <p>{location.name}</p>
                   <p>{`(eng. ${location.title})`}</p>

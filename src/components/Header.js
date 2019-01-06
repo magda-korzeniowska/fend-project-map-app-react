@@ -9,7 +9,10 @@ class Header extends Component {
       <header className="banner" role="banner">
         <img className="flag" alt="Madeira's flag" src={flag}/>
         <h1 className="page_title">MADEIRA - MUST SEE PLACES</h1>
-        <Button toggleSideBar={this.props.toggleSideBar} />
+        <Button
+          toggleSideBar={this.props.toggleSideBar}
+          sideBar={this.props.sideBar}
+        />
       </header>
     )
   }

@@ -12,12 +12,12 @@ class LocationMarker extends Component {
       >
         {this.props.activeMarker === this.props.location &&
           <InfoWindow
-            onCloseClick={this.props.handleMarkerClick}
+            onCloseClick={this.props.closeInfoWIndow}
           >
             <div className="info-window">
 
               <h3>{this.props.location.name}</h3>
-              <p>{this.props.location.title}</p>
+              <p>{`(eng. ${this.props.location.title})`}</p>
 
               <button className="details-button"
                 onClick={(event) => {
