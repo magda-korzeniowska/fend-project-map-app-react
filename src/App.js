@@ -13,7 +13,11 @@ class App extends Component {
     locations: [],
     activeMarker: {},
     modal: false,
-    sideBar: false
+    sideBar: false,
+    center: {
+      lat: 32.7511678,
+      lng: -17.001055
+    }
   }
 
   componentDidMount = () => {
@@ -40,7 +44,7 @@ class App extends Component {
       let pictures = [];
       let getPictures = (query) => {
         const FLICKR_KEY = 'c009bc8d2af43bc3f121ddf3fae2f396';
-        let num = 8;
+        let num = 6;
         let pics = [];
         fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_KEY}&tags=${query}&per_page=${num}&page=1&format=json&nojsoncallback=1`)
           .then(res => res.json())
@@ -93,7 +97,8 @@ class App extends Component {
 
   handleMarkerClick = (event, position, marker) => {
     this.setState({
-      activeMarker: marker
+      activeMarker: marker,
+      center: position
     })
   }
 
@@ -129,7 +134,6 @@ class App extends Component {
         />
 
         <div className={`sidebar-wrapper ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`}>
-          {console.log(this.state.filteredLocations)}
           {this.state.sideBar && (
             <aside className="sidebar" >
               <Search
@@ -143,6 +147,7 @@ class App extends Component {
 
         <main className={`main-container ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`}>
           <MapContainer
+            center={this.state.center}
             locations={this.state.locations}
             handleMarkerClick={this.handleMarkerClick}
             closeInfoWIndow={this.closeInfoWIndow}

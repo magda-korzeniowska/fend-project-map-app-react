@@ -8,6 +8,7 @@ class MapContainer extends Component {
 		return (
 			<Map
 				locations={this.props.locations}
+				center={this.props.center}
         handleMarkerClick={this.props.handleMarkerClick}
 				closeInfoWIndow={this.props.closeInfoWIndow}
         activeMarker={this.props.activeMarker}

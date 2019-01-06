@@ -24,9 +24,12 @@ header {
   margin: auto 1em auto 0;
   padding: 0;
   color: #0066cc;
-  font-family: Rajdhani, sans-serif;
   font-size: 2em;
   font-weight: 700;
+}
+
+.page_title span {
+  white-space:nowrap;
 }
 
 .button {
@@ -52,15 +55,13 @@ header {
   top: 102px;
   background-color: #f1f1f1;
   z-index: 1;
-  /* display: block; */
   transition: 0.3s;
-  font-size: inherit;
 }
 
 /* SEARCH BAR */
 
 .search-location-bar {
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 
 .search-location-input {
@@ -122,6 +123,13 @@ header {
   font-size: 0.8em;
 }
 
+/*** MARKER ***/
+
+/* main {
+  transition: width 0.3s;
+} */
+
+
 /*** INFO WINDOW ***/
 
 .info-window {
@@ -164,8 +172,6 @@ header {
     cursor: pointer;
 }
 
-
-
 /*** LOCATION DETAILS COMPONENT ***/
 
 .modal_open {
@@ -181,8 +187,8 @@ header {
     z-index: 2;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
@@ -203,6 +209,7 @@ header {
   font-family: Rajdhani, sans-serif;
   font-size: 1.25em;
   color: #0066cc;
+  margin-top: 0;
 }
 
 
@@ -290,4 +297,101 @@ header {
 .close:focus {
     color: black;
     cursor: pointer;
+}
+
+/* ====================== MEDIA QUERIES ====================== */
+
+@media screen and (max-width: 800px) {
+  .photogallery {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .App {
+    margin: 15px;
+  }
+
+  .page_title {
+    font-size: 1.2em;
+  }
+
+  .info-window {
+    width: 13em;
+    height: 7em;
+  }
+
+  .info-window h3, .info-window .details-button {
+    font-size: 1em;
+  }
+
+  .info-window p {
+    font-size: 0.9em;
+  }
+
+  .sidebar {
+    width: 200px;
+    top: 87px;
+  }
+
+  .search-location-bar {
+    padding: 0;
+  }
+
+  .search-location-label {
+    font-size: 0.7em;
+    top: 15px;
+    left: 10px;
+  }
+
+  .search-location-input:focus+.search-location-label {
+    font-size: 0.5em;
+    top: 15px;
+    left: 10px;
+  }
+
+  .location-list-item {
+    font-size: 0.9em;
+  }
+
+  .location-list-item:hover {
+    padding-left: 35px;
+  }
+
+  .location-list-item p:last-of-type {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .photogallery li {
+    width: 85px;
+    height: 60px;
+  }
+
+  .location-name {
+    font-size: 1em;
+  }
+
+  .location-info {
+    font-size: 0.9em;
+  }
+
+  .flickr span, .flickr a, .wikipedia span, .wikipedia a {
+    font-size: 0.8em;
+  }
+
+  .close {
+      font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .App {
+    margin: 0;
+  }
+
+  .page_title {
+    font-size: 1em;
+  }
 }

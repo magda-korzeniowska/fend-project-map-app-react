@@ -30,7 +30,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
     <Fragment>
       <GoogleMap
         defaultZoom={11.7}
-        defaultCenter={{ lat: 32.7511678, lng: -17.001055 }}
+        center={props.center}
         >
         {markers}
       </GoogleMap>

@@ -33,12 +33,7 @@ class LocationDetails extends Component {
               </div>
             </div>
 
-{/* TODO: check the length property of this.props.activeMarker.wikiData
-=== 0 -> show "no information available on Wikipedia"
-> 0 -> show information from Wikipedia
-At the moment: 'Cannot read property 'length' of undefined' error   */}
-
-            {this.props.activeMarker.wikiData ? (
+            {this.props.activeMarker.wikiData && this.props.activeMarker.wikiData.length ? (
               <div className="location-info">
 
                 <div className="wiki-data"
@@ -64,23 +59,6 @@ At the moment: 'Cannot read property 'length' of undefined' error   */}
             )}
           </div>
         ) : undefined }
-
-          {console.log(this.props.activeMarker.wikiData)}
-
-          {/* {this.props.activeMarker.wikiData !== null ? (
-            <div className="location-info">
-
-              <span>Info</span>
-
-            </div>
-          ) : (
-            <div className="location-info">
-              <span>No info</span>
-            </div>
-          )}
-        </div>
-      ) : undefined } */}
-
       </div>
     )
   }

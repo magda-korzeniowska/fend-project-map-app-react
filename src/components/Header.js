@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <header className="banner" role="banner">
         <img className="flag" alt="Madeira's flag" src={flag}/>
-        <h1 className="page_title">MADEIRA - MUST SEE PLACES</h1>
+        <h1 className="page_title">MADEIRA - <span>MUST SEE PLACES</span></h1>
         <Button
           toggleSideBar={this.props.toggleSideBar}
           sideBar={this.props.sideBar}
