@@ -6,11 +6,18 @@ class LocationDetails extends Component {
     return (
       <div className={`modal ${this.props.modal ? "modal_open" : "modal_closed"}`}>
         {this.props.activeMarker ? (
-          <div className="modal-content">
+          <div className="modal-content"
+            tabIndex="0"
+            role="dialog"
+            aria-modal="true"
+            aria-label="location details">
 
-            <span className="close"
-              onClick={(event) => this.props.closeModal()}
-              >&times;</span>
+            <button type="button"
+              className="close"
+              aria-label="Close"
+              onClick={(event) => this.props.closeModal()}>
+              <span aria-hidden="true">&times;</span>
+            </button>
 
             <h2 className="location-name">{`${this.props.activeMarker.name} (${this.props.activeMarker.title})`}</h2>
 
@@ -18,9 +25,10 @@ class LocationDetails extends Component {
               <ul className="photogallery">
                 {this.props.activeMarker.photos ? this.props.activeMarker.photos.map(photo => (
                   <li key={photo}>
-                    <a href={photo} target="_blank" rel="noopener noreferrer">
+                    <a href={photo} target="_blank" rel="noopener noreferrer" aria-label={`Image of ${this.props.activeMarker.name}`}>
                       <div className="photo"
-                        style={{ backgroundImage: `url(${ photo})` }}>
+                        style={{ backgroundImage: `url(${ photo })` }}
+                        role="img">
                       </div>
                     </a>
                   </li>

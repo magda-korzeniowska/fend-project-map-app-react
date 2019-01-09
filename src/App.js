@@ -132,34 +132,37 @@ class App extends Component {
           toggleSideBar={this.toggleSideBar}
           sideBar={this.state.sideBar}
         />
+        <main>
+          <div className={`sidebar-wrapper ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`}>
+            {this.state.sideBar && (
+              <aside className="sidebar" >
+                <Search
+                  handleMarkerClick={this.handleMarkerClick}
+                  handleKeyPress={this.handleKeyPress}
+                  locations={this.state.locations}
+                  >
+                </Search>
+              </aside>
+            )}
+          </div>
 
-        <div className={`sidebar-wrapper ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`}>
-          {this.state.sideBar && (
-            <aside className="sidebar" >
-              <Search
-                handleMarkerClick={this.handleMarkerClick}
-                locations={this.state.locations}
-                >
-              </Search>
-            </aside>
-          )}
-        </div>
-
-        <main className={`main-container ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`}>
-          <MapContainer
-            center={this.state.center}
-            locations={this.state.locations}
-            handleMarkerClick={this.handleMarkerClick}
-            closeInfoWIndow={this.closeInfoWIndow}
-            activeMarker={this.state.activeMarker}
-            modal={this.state.modal}
-            openModal={this.openModal}
-            closeModal={this.closeModal}
-          />
+          <div className={`main-container ${this.state.sideBar ? "sidebar_open" : "sidebar_closed"}`} role="application" aria-label="Map of the must see places on Madeira Island">
+            <MapContainer
+              center={this.state.center}
+              locations={this.state.locations}
+              handleMarkerClick={this.handleMarkerClick}
+              closeInfoWIndow={this.closeInfoWIndow}
+              activeMarker={this.state.activeMarker}
+              modal={this.state.modal}
+              openModal={this.openModal}
+              closeModal={this.closeModal}
+            />
+          </div>
         </main>
-        {/* <footer className="footer">
-          <p>App created for UDACITY Nanodegree - Google Schoolarship Program. Copyright (c) 2018 </p>
-        </footer> */}
+
+        <footer className="footer">
+          <p>App created for UDACITY Nanodegree - Google Schoolarship Program</p>
+        </footer>
       </div>
     );
   }

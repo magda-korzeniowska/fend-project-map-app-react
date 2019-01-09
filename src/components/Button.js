@@ -8,6 +8,7 @@ class Button extends Component {
     return (
       <button
         className="button"
+        aria-label="toggle menu - click to open or close list of locations"
         onClick={this.props.toggleSideBar}
       >
         {this.props.sideBar ?

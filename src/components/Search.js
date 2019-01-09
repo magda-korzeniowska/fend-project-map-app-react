@@ -43,21 +43,25 @@ class Search extends Component {
         <div className="search-location-bar">
           <input
             className="search-location-input"
+            id="search-input"
             type="text"
             value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
-          <label htmlFor="input" className="search-location-label">
+          <label htmlFor="search-input" className="search-location-label">
             Search by location
           </label>
         </div>
 
-        <div className="search-location-results">
+        <div className="search-location-results" aria-label="list of locations">
           <ul className="location-list">
             {this.state.filteredLocations.map(location => (
               <li
                 className="location-list-item"
                 key={location.id}
+                tabIndex="0"
+                role="button"
+								aria-label={location.name}
                 onClick={(event) => this.props.handleMarkerClick(event, location.latlng, location)}
                 onKeyPress={(event) => this.props.handleMarkerClick(event, location.latlng, location)}
                 >
@@ -66,6 +70,11 @@ class Search extends Component {
 
               </li>
             ))}
+
+            {(this.state.filteredLocations.length === 0) &&
+								<div className="no-location-found">Sorry, we didn't find any matching location</div>
+							}
+
           </ul>
         </div>
       </div>

@@ -1,7 +1,17 @@
 import React, { Component }  from 'react';
-import { InfoWindow, Marker } from "react-google-maps";
+import { InfoWindow, Marker } from 'react-google-maps';
 
 class LocationMarker extends Component {
+  // constructor(props) {
+  //       super(props);
+  //       this.focusRef = React.createRef();
+  //   }
+  //
+  //   getFocus = () => {
+  //       this.focusRef.current.focus();
+  //   }
+  //
+  //   ref={this.focusRef}
 
   render() {
     return (
@@ -20,6 +30,7 @@ class LocationMarker extends Component {
               <p>{`(eng. ${this.props.location.title})`}</p>
 
               <button className="details-button"
+                aria-label="Click for details of location"
                 onClick={(event) => {
                   this.props.openModal();
                 }}>Details</button>

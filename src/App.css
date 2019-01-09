@@ -39,6 +39,17 @@ header {
   background-color: #fff;
 }
 
+/*** FOOTER ***/
+
+.footer {
+  position: absolute;
+  right: 40px;
+}
+
+.footer p {
+  color: #000;
+  font-size: 0.8em;
+}
 
 /*** SIDEBAR ***/
 
@@ -108,7 +119,7 @@ header {
   box-sizing: border-box;
 }
 
-.location-list-item:hover {
+.location-list-item:hover, .location-list-item:focus {
   background-color: #bfbfbf;
   padding-left: 50px;
 }
@@ -123,13 +134,11 @@ header {
   font-size: 0.8em;
 }
 
-/*** MARKER ***/
-
-/* main {
-  transition: width 0.3s;
-} */
-
-
+.no-location-found {
+  padding: 0 20px;
+  font-size: 1.2em;
+  color: #737373;
+}
 /*** INFO WINDOW ***/
 
 .info-window {
@@ -243,11 +252,13 @@ header {
 }
 
 .flickr span {
+  font-size: 0.9em;
   font-weight: 700;
   color: #0066cc
 }
 
 .flickr a {
+  font-size: 0.9em;
   color: #0066cc;
 }
 
@@ -268,11 +279,16 @@ header {
 }
 
 .wikipedia .powered-by {
+  font-size: 0.9em;
   font-weight: 700;
   color: #0066cc
 }
+.wikipedia .no-wiki-data {
+  font-size: 0.9em;
+}
 
 .wikipedia a {
+  font-size: 0.9em;
   color: #0066cc;
 }
 
@@ -377,7 +393,7 @@ header {
     font-size: 0.9em;
   }
 
-  .flickr span, .flickr a, .wikipedia span, .wikipedia a {
+  .flickr span, .flickr a, .wikipedia a, .wikipedia .powered-by, .wikipedia .no-wiki-data {
     font-size: 0.8em;
   }
 
