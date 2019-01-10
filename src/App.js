@@ -80,8 +80,10 @@ class App extends Component {
       }
 
       // Make a request for each location by location name
-      getPictures(location.name);    // fetch images form Flicker
-      getWikiData(location.name);  // fetch data form Wikipedia
+      // fetch images form Flicker
+      getPictures(location.search); 
+      // fetch data form Wikipedia
+      getWikiData(location.search);
 
       // array in array - push all pictures to 'location' array - 'photos' variable
       location['photos'] = pictures[0];
@@ -92,7 +94,6 @@ class App extends Component {
 
     // Set the state of locations - updated by photos from Flick and data from Wikipedia
     this.setState({ locations: locations });
-    console.log(locations)
   }
 
   handleMarkerClick = (event, position, marker) => {
@@ -140,6 +141,7 @@ class App extends Component {
                   handleMarkerClick={this.handleMarkerClick}
                   handleKeyPress={this.handleKeyPress}
                   locations={this.state.locations}
+                  sideBar={this.state.sideBar}
                   >
                 </Search>
               </aside>
@@ -156,6 +158,7 @@ class App extends Component {
               modal={this.state.modal}
               openModal={this.openModal}
               closeModal={this.closeModal}
+              sideBar={this.state.sideBar}
             />
           </div>
         </main>

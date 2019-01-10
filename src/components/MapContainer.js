@@ -15,6 +15,7 @@ class MapContainer extends Component {
         modal={this.props.modal}
         openModal={this.props.openModal}
         closeModal={this.props.closeModal}
+				sideBar={this.props.sideBar}
 				googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyCUj8C4MekWgZ5bZtuSeBW0ckKE3UC9LFU&v=3.exp'
 				loadingElement={<div style={{ height: `100%` }} />}
 				containerElement={<div style={{ height: `100vh` }} />}

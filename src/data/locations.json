@@ -7,7 +7,8 @@
       "lat": 32.7431658,
       "lng": -16.7010976
     },
-    "alt": "Point of Saint Lawrence"
+    "alt": "Point of Saint Lawrence",
+    "search": "Ponta de São Lourenço"
   },
   {
     "id": "faja-dos-padres",
@@ -17,16 +18,106 @@
       "lat": 32.6569985,
       "lng": -17.0237307
     },
-    "alt": "Fajã dos Padres Cable Car"
+    "alt": "Fajã dos Padres Cable Car",
+    "search": "Fajã dos Padres"
   },
   {
     "id": "porto-moniz",
     "name": "Piscinas Naturais de Porto Moniz",
-    "title": "Porto Moniz Natural Swimming Pools",
+    "title": "Porto Moniz Natural Pools",
     "latlng": {
       "lat": 32.8623118,
       "lng": -17.1706851
     },
-    "alt": "Porto Moniz Natural Swimming Pools"
+    "alt": "Porto Moniz Natural Pools",
+    "search": "Piscinas Naturais de Porto Moniz"
+  },
+  {
+    "id": "pico-ruvio",
+    "name": "Pico Ruivo",
+    "title": "Pico Ruivo Peak",
+    "latlng": {
+      "lat": 32.7589702,
+      "lng": -16.9517851
+    },
+    "alt": "Pico Ruivo Peak",
+    "search": "Pico Ruivo"
+  },
+  {
+    "id": "pico-do-arieiro",
+    "name": "Pico do Arieiro",
+    "title": "Pico do Arieiro Peak",
+    "latlng": {
+      "lat": 32.7355732,
+      "lng": -16.9376438
+    },
+    "alt": "Pico do Arieiro Peak",
+    "search": "Pico do Arieiro"
+  },
+  {
+    "id": "cabo-girao",
+    "name": "Cabo Girão",
+    "title": "Cabo Girão Skywalk",
+    "latlng": {
+      "lat": 32.6565832,
+      "lng": -17.0065704
+    },
+    "alt": "Cabo Girão Skywalk",
+    "search": "Cabo Girão"
+  },
+  {
+    "id": "monte-palace",
+    "name": "Jardim Tropical Monte Palace",
+    "title": "Monte Palace Tropical Garden",
+    "latlng": {
+      "lat": 32.6690345,
+      "lng": -16.914265
+    },
+    "alt": "Monte Palace Tropical Garden",
+    "search": "Monte Palace Tropical Garden"
+  },
+  {
+    "id": "funchal",
+    "name": "Funchal",
+    "title": "Funchal - capital city of Madeira",
+    "latlng": {
+      "lat": 32.660109,
+      "lng": -16.9596901
+    },
+    "alt": "Funchal Capital City",
+    "search": "Funchal"
+  },
+  {
+    "id": "sao-vicente",
+    "name": "Grutas de São Vicente",
+    "title": "São Vicente Caves",
+    "latlng": {
+      "lat": 32.7697089,
+      "lng": -17.0218216
+    },
+    "alt": "São Vicente Caves",
+    "search": "São Vicente Caves"
+  },
+  {
+    "id": "levada-25-fontes",
+    "name": "Levada das 25 Fontes",
+    "title": "Levada of 25 Falls",
+    "latlng": {
+      "lat": 32.7641767,
+      "lng": -17.1402247
+    },
+    "alt": "Levada of 25 Falls",
+    "search": "Levada das 25 Fontes"
+  },
+  {
+    "id": "curral-das-freiras",
+    "name": "Curral das Freiras",
+    "title": "Valley of the Nuns",
+    "latlng": {
+      "lat": 32.7263098,
+      "lng": -16.986705
+    },
+    "alt": "Valley of the Nuns",
+    "search": "Curral das Freiras"
   }
 ]

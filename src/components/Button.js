@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+import PropTypes from 'prop-types';
 import HamburgerMenu from '../images/hamburger_menu.svg';
 import BackIcon from '../images/back-icon.svg';
 
@@ -18,6 +19,11 @@ class Button extends Component {
       </button>
     )
   }
+}
+
+Button.propTypes = {
+  sideBar: PropTypes.bool.isRequired,
+  toggleSideBar: PropTypes.func.isRequired
 }
 
 export default Button;

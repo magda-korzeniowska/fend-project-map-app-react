@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import escapeRegExp from 'escape-string-regexp';
+import PropTypes from 'prop-types';
 import sortBy from 'sort-by'
 
 class Search extends Component {
@@ -29,15 +30,8 @@ class Search extends Component {
     }
   }
 
-  // przed ostatnim else (athens)
-    // if (showingPlaces.length === 1) {
-    //           this.toggleLocationsActive(
-    //             this.state.showingPlaces[0].location.lat,
-    //             this.state.showingPlaces[0].location.lng
-    //           );
-
-
   render() {
+    this.state.filteredLocations.sort(sortBy('name'))
     return (
       <div className="search-location">
         <div className="search-location-bar">
@@ -47,6 +41,7 @@ class Search extends Component {
             type="text"
             value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
+            aria-hidden={this.props.sideBar ? false : true}
           />
           <label htmlFor="search-input" className="search-location-label">
             Search by location
@@ -80,6 +75,11 @@ class Search extends Component {
       </div>
     )
   }
+}
+
+Search.propTypes = {
+  sideBar: PropTypes.bool.isRequired,
+  handleMarkerClick: PropTypes.func.isRequired
 }
 
 export default Search;

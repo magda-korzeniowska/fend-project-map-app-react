@@ -19,6 +19,7 @@ class LocationMarker extends Component {
         onClick={(event => this.props.handleMarkerClick(event, this.props.position, this.props.location))}
         position={this.props.position}
         animation={this.props.activeMarker === this.props.location ? window.google.maps.Animation.BOUNCE : null}
+        // tabIndex={this.props.sideBar ? -1 : 0}
       >
         {this.props.activeMarker === this.props.location &&
           <InfoWindow
@@ -43,3 +44,5 @@ class LocationMarker extends Component {
 }
 
 export default LocationMarker;
+
+//ZMIANA

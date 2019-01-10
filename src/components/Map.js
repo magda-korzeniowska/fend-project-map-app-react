@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import PropTypes from 'prop-types';
 import LocationMarker from "./LocationMarker.js";
 import LocationDetails from "./LocationDetails.js";
 
@@ -10,9 +11,6 @@ const Map = withScriptjs(withGoogleMap((props) => {
       location={location}
       key={location.id}
       index={index}
-      // id={location.id}
-      // name={location.name}
-      // engName={location.title}
       position={{
         lat: location.latlng.lat,
         lng: location.latlng.lng
@@ -23,6 +21,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
       openModal={props.openModal}
       modal={props.modal}
       closeModal={props.closeModal}
+      sideBar={props.sideBar}
     />
   );
 
@@ -42,5 +41,9 @@ const Map = withScriptjs(withGoogleMap((props) => {
     </Fragment>
   );
 }))
+
+Map.propTypes = {
+  locations: PropTypes.array.isRequired,
+}
 
 export default Map;

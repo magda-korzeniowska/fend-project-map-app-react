@@ -59,15 +59,16 @@ header {
 }
 
 .sidebar {
-  /* display: flex; */
   position: absolute;
-  width: 300px;
+  flex-basis: 300px;
   height: 100%;
   top: 102px;
   background-color: #f1f1f1;
   z-index: 1;
   transition: 0.3s;
+  overflow-y: scroll;
 }
+
 
 /* SEARCH BAR */
 
@@ -169,17 +170,11 @@ header {
   font-size: 1.25em;
   align-self: center;
   background-color: #cce6ff;
-  /* color: black; */
   width: 50%;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.details-button:hover,
-.details-button:focus {
-    color: black;
-    cursor: pointer;
-}
 
 /*** LOCATION DETAILS COMPONENT ***/
 
@@ -221,6 +216,10 @@ header {
   margin-top: 0;
 }
 
+.location-name span {
+  font-style: italic;
+  font-size: 0.9em;
+}
 
 /* PHOTOGALLERY */
 
@@ -346,6 +345,7 @@ header {
   }
 
   .sidebar {
+    height: 100%;
     width: 200px;
     top: 87px;
   }
@@ -364,6 +364,10 @@ header {
     font-size: 0.5em;
     top: 15px;
     left: 10px;
+  }
+
+  .location-list {
+    overflow-y: scroll;
   }
 
   .location-list-item {

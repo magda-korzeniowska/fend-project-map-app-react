@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class LocationDetails extends Component {
 
@@ -7,19 +8,19 @@ class LocationDetails extends Component {
       <div className={`modal ${this.props.modal ? "modal_open" : "modal_closed"}`}>
         {this.props.activeMarker ? (
           <div className="modal-content"
-            tabIndex="0"
-            role="dialog"
-            aria-modal="true"
+            // tabIndex="0"
+            // role="dialog"
+            // aria-modal="true"
             aria-label="location details">
 
             <button type="button"
               className="close"
               aria-label="Close"
               onClick={(event) => this.props.closeModal()}>
-              <span aria-hidden="true">&times;</span>
+              <span>&times;</span>
             </button>
 
-            <h2 className="location-name">{`${this.props.activeMarker.name} (${this.props.activeMarker.title})`}</h2>
+            <h2 className="location-name">{`${this.props.activeMarker.name}`}<span>{` (eng. ${this.props.activeMarker.title})`}</span></h2>
 
             <div className="pictures">
               <ul className="photogallery">
@@ -71,4 +72,11 @@ class LocationDetails extends Component {
     )
   }
 }
+
+LocationDetails.propTypes = {
+  modal: PropTypes.bool.isRequired,
+  activeMarker: PropTypes.object.isRequired,
+  closeModal: PropTypes.func.isRequired
+}
+
 export default LocationDetails;
