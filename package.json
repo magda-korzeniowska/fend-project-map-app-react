@@ -2,8 +2,10 @@
   "name": "fend-project-map-app-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://magda-korzeniowska.github.io/fend-project-map-app-react",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
+    "gh-pages": "^2.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -15,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
