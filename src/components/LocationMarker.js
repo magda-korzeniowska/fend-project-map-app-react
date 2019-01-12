@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import { InfoWindow, Marker } from 'react-google-maps';
+import * as Focus from '../utils/Focus';
 
 class LocationMarker extends Component {
   // constructor(props) {
@@ -19,7 +20,6 @@ class LocationMarker extends Component {
         onClick={(event => this.props.handleMarkerClick(event, this.props.position, this.props.location))}
         position={this.props.position}
         animation={this.props.activeMarker === this.props.location ? window.google.maps.Animation.BOUNCE : null}
-        // tabIndex={this.props.sideBar ? -1 : 0}
       >
         {this.props.activeMarker === this.props.location &&
           <InfoWindow
@@ -29,11 +29,12 @@ class LocationMarker extends Component {
 
               <h3>{this.props.location.name}</h3>
               <p>{`(eng. ${this.props.location.title})`}</p>
-
               <button className="details-button"
                 aria-label="Click for details of location"
+                tabIndex={this.props.sideBar && this.props.activeMarker ? -1 : 0}
                 onClick={(event) => {
                   this.props.openModal();
+                  Focus.getFocus();
                 }}>Details</button>
             </div>
           </InfoWindow>

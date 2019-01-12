@@ -140,6 +140,7 @@ header {
   font-size: 1.2em;
   color: #737373;
 }
+
 /*** INFO WINDOW ***/
 
 .info-window {
@@ -175,8 +176,7 @@ header {
   cursor: pointer;
 }
 
-
-/*** LOCATION DETAILS COMPONENT ***/
+/*** LOCATION DETAILS - MODAL ***/
 
 .modal_open {
   display: block

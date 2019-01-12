@@ -8,9 +8,9 @@ class LocationDetails extends Component {
       <div className={`modal ${this.props.modal ? "modal_open" : "modal_closed"}`}>
         {this.props.activeMarker ? (
           <div className="modal-content"
-            // tabIndex="0"
-            // role="dialog"
-            // aria-modal="true"
+            tabIndex="0"
+            role="dialog"
+            aria-modal="true"
             aria-label="location details">
 
             <button type="button"

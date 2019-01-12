@@ -1,7 +1,7 @@
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
 import HamburgerMenu from '../images/hamburger_menu.svg';
-import BackIcon from '../images/back-icon.svg';
+import BackIcon from '../images/back_icon.svg';
 
 class Button extends Component {
 

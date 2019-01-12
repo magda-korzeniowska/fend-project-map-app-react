@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import escapeRegExp from 'escape-string-regexp';
-import sortBy from 'sort-by'
 import Header from './components/Header.js';
 import MapContainer from './components/MapContainer.js';
 import Search from './components/Search.js';
@@ -81,7 +79,7 @@ class App extends Component {
 
       // Make a request for each location by location name
       // fetch images form Flicker
-      getPictures(location.search); 
+      getPictures(location.search);
       // fetch data form Wikipedia
       getWikiData(location.search);
 
