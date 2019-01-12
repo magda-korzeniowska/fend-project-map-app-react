@@ -3,16 +3,6 @@ import { InfoWindow, Marker } from 'react-google-maps';
 import * as Focus from '../utils/Focus';
 
 class LocationMarker extends Component {
-  // constructor(props) {
-  //       super(props);
-  //       this.focusRef = React.createRef();
-  //   }
-  //
-  //   getFocus = () => {
-  //       this.focusRef.current.focus();
-  //   }
-  //
-  //   ref={this.focusRef}
 
   render() {
     return (

@@ -1,44 +1,94 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Madeira Must See Places - Map App React Project
 
-## Available Scripts
+Project #8
+Created for the Udacity Nanodegree Front End Web Developer (Full Google Scholarship)
 
-In the project directory, you can run:
+[LIVE PREVIEW](https://magda-korzeniowska.github.io/fend-project-map-app-react/)
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Project Description](#project-description)
+* [Installation](#installation)
+* [File Structure](#file-structure)
+* [Create React App](#create-react-app)
+* [Important](#important)
+* [Dependencies](#dependencies)
+* [Sources](#sources)
+* [Contributing](#contributing)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Project Description
 
-### `npm test`
+In this final task, students had to built the project from scratch, without any existing starter code to rely on.
+The goal was to develop a single page application (accessibble and available offline) featuring a map with extra functionality added to this map (including highlighted locations, third-party data about those locations and various ways to browse the content).
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app uses React.js with Google Maps API, Flickr API, MediaWiki API (Wikipedia), as well as react-google-maps and escape-string-regexp packages. The complete list of dependencies can be found below.
 
-### `npm run build`
+This app presents a map of places worth visiting on Madeira Island. User can filter locations by name and click each marker to display infowindow to get a detailed information about specific location with pictures.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
+1. Clone repository using:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+    `$ git clone https://github.com/magda-korzeniowska/fend-project-map-app-react`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.  Install all dependencies:
 
-### `npm run eject`
+    `$ npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Run application:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    `$ npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. After running npm start, the React App should open automatically in your browser. If it doesn't, open `localhost:3000` in your browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## File Structure
+```bash
+├── README.md
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+└── src
+    ├── components
+    │   ├── Button.js
+    │   ├── Header.js
+    │   ├── LocationDetails.js
+    │   ├── LocationMarker.js
+    │   ├── Map.js
+    │   ├── MapContainer.js
+    │   └── Search.js
+    ├── data
+    │   └── locations.json
+    ├── images
+    │   ├── Flag_of_Madeira.svg
+    │   ├── back_icon.svg
+    │   └── hamburger_menu.svg
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    └── serviceWorker.js
+```
 
-## Learn More
+## Create React App
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Important
+The application can be run offline using the service worker that is provided by create-react-app. It will work only on production build (production mode)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dependencies
+- [create-react-app](https://github.com/facebookincubator/create-react-app)
+- [react-google-maps]( https://tomchentw.github.io/react-google-maps/)
+- [escape-string-regexp](https://www.npmjs.com/package/escape-string-regexp)
+- [prop-types](https://www.npmjs.com/package/prop-types)
+- Images from [Flickr API](https://www.flickr.com/services/api/flickr.photos.search.html)
+- Data from Wikipedia API - [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page)
+
+
+## Sources
+- icons: [iconfinder.com](https://iconfinder.com)
+
+## Contributing
+This is a Udacity student's project. Therefore, no pull requests will be accepted.
